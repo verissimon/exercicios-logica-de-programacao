@@ -8,9 +8,9 @@ typedef struct tipoPessoa{
     int idade;
     char cidade[100];
 
-} pessoa;
+} Funcionario;
 
-void lerPessoa(pessoa *p){
+void lerPessoa(Funcionario *p){
     
     printf("seu nome\t");
     fflush(stdin);
@@ -23,15 +23,15 @@ void lerPessoa(pessoa *p){
     printf("\n");
 }
 
-void escrevePessoa(pessoa *p){
+void escrevePessoa(Funcionario *p){
     printf("nome: %s \n", p->nome);
     printf("idade: %d \n", p->idade);
     printf("cidade: %s \n\n", p->cidade);
 }
 
 void main(){
-    pessoa vet[TAMANHO];
-
+    Funcionario vet[TAMANHO];
+//pessoa
     for(int i=0; i<TAMANHO; i++){
         lerPessoa(&vet[i]);
     }

@@ -3,7 +3,7 @@
 void main(){
     int n;
     Pilha* pilha = criarPilha();
-    /*
+    
     printf("informe um numero inteiro: ");
     scanf("%d", &n);
     while(n != 0){
@@ -37,7 +37,7 @@ void main(){
 
 
     printf("o menor numero da pilha eh: %d\n", menor(pilha));
-    */
+  
     int decimal = 14;
     while(decimal/2 != 0 || decimal%2 != 0){
         push(pilha, decimal%2);
