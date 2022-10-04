@@ -47,7 +47,7 @@ void somaMatriz(int vet1[], int vet2[], int vetSum[]) {
 void transpostaSomaMatriz(int vet1[], int vet2[]){
 	int vetSum[TAM], vetTransp[TAM];
 	zeraMatriz(vetSum);
-	somaMatriz(int vet1[], int vet2[], int vetSum[]);
+	somaMatriz(vet1[], vet2[], vetSum[]);
 	for(int i = 0; i < linha; i++){
 		for(int j =0; j < col; j++){
 			vetTransp[i*col + j] = vetSum[j*col + i];
