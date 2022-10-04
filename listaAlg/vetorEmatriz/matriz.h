@@ -47,14 +47,14 @@ void somaMatriz(int vet1[], int vet2[], int vetSum[]) {
 void transpostaSomaMatriz(int vet1[], int vet2[]){
 	int vetSum[TAM], vetTransp[TAM];
 	zeraMatriz(vetSum);
-	somaMatriz(vet1[], vet2[], vetSum[]);
+	somaMatriz(vet1, vet2, vetSum);
 	for(int i = 0; i < linha; i++){
 		for(int j =0; j < col; j++){
 			vetTransp[i*col + j] = vetSum[j*col + i];
 	}
     imprimeMatriz(vetTransp);
 }
-
+}
 void preencheMatriz(int vet[]) {
   for (int i = 0; i < linha; i++) {
     for (int j = 0; j < col; j++) {
@@ -70,17 +70,18 @@ void produtoMatriz(int vet1[], int vet2[], int lin1, int col1, int lin2, int col
     if(col1 == lin2){
         const int TAM = lin1*col2;
         int vetProd[TAM];
-        dimensionaM(3, 3);
+        //dimensionaM(lin1, col2);
         zeraMatriz(vetProd);
         for(int i = 0; i < lin1; i++){
             for(int j = 0; j < col2; j++){
                 for(int k = 0; k < lin2; k++){
-                    vetProd[i*col + j] += vet1[i*col1 + k] * vet2[k*col2 + j];
+                    vetProd[i*col2 + j] += vet1[i*col1 + k] * vet2[k*col2 + j];
                 }
             }
         }
         
         imprimeMatriz(vetProd);
+        printf("%d", vetProd[2*col2 + 2]);
     }
     else printf("erro\n");
 
