@@ -1,23 +1,22 @@
 #include "matriz.h"
 
 int main() {
-//   int vet1[TAM], vet2[TAM], vetSum[TAM];
-//   criaMatriz(vet1);
-//   printf("----------matriz1----------\n");
-//   preencheMatriz(vet1);
-//   imprimeMatriz(vet1);
-
-//   criaMatriz(vet2);
-//   printf("----------matriz2----------\n");
-//   preencheMatriz(vet2);
-//   imprimeMatriz(vet2);
-    int vetA[] = {3, 4,
-                  1, 2,
-                  0, 4};    //lin1 = 3 col1 =2
-    int vetB[] = {6, 2, 3,
-                  2, 1, 3}; //lin2 = 2 col2=3
+ int vet1[20], vet2[20], vetSum[20];
+  dimensionaM(3, 2);
+  zeraMatriz(vet1);
+  preencheMatriz(vet1);
+  printf("\n");
+  //imprimeMatriz(vet1);
+  printf("\n");
+  dimensionaM(2, 3);
+  zeraMatriz(vet2);
+  preencheMatriz(vet2);
+  printf("\n");
+  //imprimeMatriz(vet2);
+  printf("\n");
     
     //vetProd[4] = {30, 14, 12, 6};
-  produtoMatriz(vetA, vetB, 3, 2, 2, 3);
+    printf("produto: \n");
+  produtoMatriz(vet1, vet2, 3, 2, 2, 3);
   return 0;
 }
