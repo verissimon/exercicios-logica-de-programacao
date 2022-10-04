@@ -20,7 +20,6 @@ void imprimeMatriz(int vet[]) {
   for (int k = 0; k < TAM; k++) {
     if ((k % col) == 0 && (k != 0))
       printf("\n");
-    // quebra de linha. sem ela, o vetor é impresso numa linha só
     printf("%d\t", vet[k]);
   }
   printf("\n");
