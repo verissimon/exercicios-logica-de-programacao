@@ -28,7 +28,7 @@ void adicionaElemento(int vet[TAM], int valor, int linha, int coluna) {
 
 int acessaElemento(int vet[TAM], int i, int j) {
   if (i < linha && j < col)
-    return vet[i * col + j];
+    return vet[(i*col + j)];
   return 0;
 }
 // tem como parametros as coordenadas da matriz mat[i][j]
@@ -50,17 +50,21 @@ void preencheMatriz(int vet[TAM]) {
     }
   }
 }
-void criaMatriz(int vet[TAM]) {
-  // printf("quantas linhas e colunas na matriz?\n");
-  // scanf("%d%d", &linha, &col);
-  // variaveis globais pra dimensionar a matriz
-  // usuario informa tamanho da matriz
-  // TAM = linha * col;
-  zeraMatriz(vet);
-}
-void produtoMatriz(int vet1[6], int vet2[6], int lin1, int col2){
-    //vet1[3][2] -> TAM1 = 6 --------- vet2[2][3] -> TAM2 = 6
-    //vetProd[3][3] TAM = 9
-    
+
+void produtoMatriz(int vet1[], int vet2[], int lin1, int col1, int lin2, int col2){
+    if(col1 == lin2){
+        const int TAM = lin1*col2;
+        int vetProd[TAM];
+        zeraMatriz(vetProd);
+        for(int i = 0; i < lin1; i++){
+            for(int j = 0; j < col2; j++){
+                for(int k = 0; k < lin2; k++){
+                    vetProd[i*col + j] += vet1[i*col1 + k] * vet2[k*col2 + j];
+                }
+            }
+        }
+        imprimeMatriz(vetProd);
+    }
+    else printf("erro\n");
 
 }
