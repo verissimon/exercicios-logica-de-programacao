@@ -66,7 +66,7 @@ void preencheMatriz(int vet[]) {
   }
 }
 
-void produtoMatriz(int vet1[], int vet2[], int lin1, int col1, int lin2, int col2){
+void produtoMatriz(int vet1[], int vet2[], int vetProd[], int lin1, int col1, int lin2, int col2){
     if(col1 == lin2){
         const int TAM = lin1*col2;
         int vetProd[TAM];
@@ -81,7 +81,6 @@ void produtoMatriz(int vet1[], int vet2[], int lin1, int col1, int lin2, int col
         }
         
         imprimeMatriz(vetProd);
-        printf("%d", vetProd[2*col2 + 2]);
     }
     else printf("erro\n");
 
