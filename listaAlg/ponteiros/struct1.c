@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-const int TAMANHO = 2;
+const int TAM = 2;
 
 typedef struct tipoPessoa{
     char nome[100];
@@ -30,12 +30,12 @@ void escrevePessoa(Funcionario *p){
 }
 
 void main(){
-    Funcionario vet[TAMANHO];
+    Funcionario vet[TAM];
 //pessoa
-    for(int i=0; i<TAMANHO; i++){
+    for(int i=0; i<TAM; i++){
         lerPessoa(&vet[i]);
     }
-    for(int i=0; i<TAMANHO; i++){
+    for(int i=0; i<TAM; i++){
         if(strcmp(vet[i].cidade, "cajazeiras")==0)    escrevePessoa(&vet[i]);
     }
 

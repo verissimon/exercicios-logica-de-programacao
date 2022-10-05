@@ -2,8 +2,13 @@
 int i = 0, op;
 
 int main() {
-  Lista *listaFunc = criarLista();
-  int indiceBusca;
-  adicionaFunc(listaFunc);
-  printFunc(listaFunc);
+  FuncNodo * Funcionarios = criaPessoa(); //cria ponteiro para o primeiro funcionario e preenche seus dados
+  int indiceBusca = 1;
+  
+    adicionaFunc(Funcionarios);
+    adicionaFunc(Funcionarios);
+    
+    
+  printBusca(Funcionarios, indiceBusca);
+
 }
