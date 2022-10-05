@@ -70,7 +70,7 @@ void produtoMatriz(int vet1[], int vet2[], int lin1, int col1, int lin2, int col
     if(col1 == lin2){
         const int TAM = lin1*col2;
         int vetProd[TAM];
-        //dimensionaM(lin1, col2);
+        dimensionaM(lin1, col2);
         zeraMatriz(vetProd);
         for(int i = 0; i < lin1; i++){
             for(int j = 0; j < col2; j++){
