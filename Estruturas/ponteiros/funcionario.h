@@ -10,7 +10,9 @@ typedef struct funcNodo {
   struct funcNodo *next;
 } FuncNodo;
 
-
+void clear() {    
+  while (getchar() != '\n' && getchar() != EOF);
+}
 
 void adicionaFunc(FuncNodo * pessoa) {
   FuncNodo * aux = pessoa;
@@ -22,26 +24,27 @@ void adicionaFunc(FuncNodo * pessoa) {
   novo->indice = (aux->indice) + 1;
   novo->next = NULL;
   printf("\n-----------INSIRA DADOS DO FUNCIONARIO %d-----------\n", novo->indice);
+  printf("nome do funcionario %d: ", novo->indice);
+  clear();
+  fgets(novo->nome, sizeof(novo->nome), stdin);
+  novo->nome[strlen(novo->nome)-1] = '\0';
   printf("cpf do funcionario %d: ", novo->indice);
   scanf("%d", &novo->cpf);
-  fflush(stdin);
-  printf("nome do funcionario %d: ", novo->indice);
-  gets(novo->nome);
-  fflush(stdin);
   printf("salario do funcionario %d: ", novo->indice);
   scanf("%f", &novo->salario);
   printf("------------------------------\n");
 }
+
 FuncNodo * criaPessoa(){
   FuncNodo * p = (FuncNodo *)malloc(sizeof(FuncNodo));
   printf("\n-----------INSIRA DADOS DO FUNCIONARIO 1-----------\n");
 
+  printf("nome do funcionario: ");
+  //clear();
+  fgets(p->nome, sizeof(p->nome), stdin);
+  p->nome[strlen(p->nome)-1] = '\0';
   printf("cpf do funcionario: ");
   scanf("%d", &p->cpf);
-  fflush(stdin);
-  printf("nome do funcionario: ");
-  gets(p->nome);
-  fflush(stdin);
   printf("salario do funcionario? ");
   scanf("%f", &p->salario);
   printf("------------------------------\n");
