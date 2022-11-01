@@ -14,8 +14,18 @@ void clear() {
   while (getchar() != '\n' && getchar() != EOF);
 }
 
+void printar(FuncNodo * aux){
+  printf("\n--------FUNCIONARIO %d--------\n", aux->indice);
+  printf("nome: ");
+  puts(aux->nome);
+  printf("cpf: %d \n", aux->cpf);
+  printf("salario: %.2f", aux->salario);
+  printf("\n------------------------------\n");
+}
+
 void adicionaFunc(FuncNodo * pessoa) {
   FuncNodo * aux = pessoa;
+
   while(aux->next != NULL){
     aux = aux->next;
   }
@@ -62,12 +72,7 @@ void printBusca(FuncNodo * pessoa, int indice){
     }
     if(aux == NULL) printf("nao há funcionario com esse indice\n");
     else {
-      printf("\n--------FUNCIONARIO %d--------\n", aux->indice);
-      printf("nome: ");
-      puts(aux->nome);
-      printf("cpf: %d \n", aux->cpf);
-      printf("salario: %.2f", aux->salario);
-      printf("\n------------------------------\n");
+      printar(aux);
     }
   
 }
@@ -75,12 +80,7 @@ void printBusca(FuncNodo * pessoa, int indice){
 void printFunc(FuncNodo * pessoa) { //PRINTA TODOS OS FUNCIONARIOS INSERIDOS
   FuncNodo * aux = pessoa;
   while (aux != NULL) {
-    printf("\n--------FUNCIONARIO %d--------\n", aux->indice);
-    printf("nome: ");
-    puts(aux->nome);
-    printf("cpf: %d \n", aux->cpf);
-    printf("salario: %.2f", aux->salario);
-    printf("\n------------------------------\n");
+    printar(aux);
     aux = aux->next;
   }
 }
